@@ -163,7 +163,8 @@ class BackProjeter:
         save_dir):
 
         # create the semantizer
-        semantizer = Sem3D()
+        #semantizer = Sem3D()
+        semantizer =  PcTls.Semantic3D()
         semantizer.set_voxel_size(0.1)
 
         # loading data

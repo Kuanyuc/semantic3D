@@ -4,7 +4,8 @@ import scipy.misc
 from tqdm import *
 import json
 
-from python.Semantic3D import Sem3D
+#from python.Semantic3D import Sem3D
+import pointcloud_tools.lib.python.PcTools as PcTls
 
 # load the configuration file and define variables
 print("Loading configuration file")
@@ -22,20 +23,20 @@ output_dir = config["output_directory"]
 
 filenames = [
         "birdfountain_station1_xyz_intensity_rgb",
-        "castleblatten_station1_intensity_rgb",
-        "castleblatten_station5_xyz_intensity_rgb",
-        "marketplacefeldkirch_station1_intensity_rgb",
-        "marketplacefeldkirch_station4_intensity_rgb",
-        "marketplacefeldkirch_station7_intensity_rgb",
-        "sg27_station10_intensity_rgb",
-        "sg27_station3_intensity_rgb",
-        "sg27_station6_intensity_rgb",
-        "sg27_station8_intensity_rgb",
-        "sg28_station2_intensity_rgb",
-        "sg28_station5_xyz_intensity_rgb",
-        "stgallencathedral_station1_intensity_rgb",
-        "stgallencathedral_station3_intensity_rgb",
-        "stgallencathedral_station6_intensity_rgb"
+#        "castleblatten_station1_intensity_rgb",
+#        "castleblatten_station5_xyz_intensity_rgb",
+#        "marketplacefeldkirch_station1_intensity_rgb",
+#        "marketplacefeldkirch_station4_intensity_rgb",
+#        "marketplacefeldkirch_station7_intensity_rgb",
+#        "sg27_station10_intensity_rgb",
+#        "sg27_station3_intensity_rgb",
+#        "sg27_station6_intensity_rgb",
+#        "sg27_station8_intensity_rgb",
+#        "sg28_station2_intensity_rgb",
+#        "sg28_station5_xyz_intensity_rgb",
+#        "stgallencathedral_station1_intensity_rgb",
+#        "stgallencathedral_station3_intensity_rgb",
+#        "stgallencathedral_station6_intensity_rgb"
     ]
 
 # create outpu directory
@@ -45,7 +46,8 @@ if not os.path.exists(output_dir):
 for filename in filenames:
     print(filename)
 
-    semantizer = Sem3D()
+    #semantizer = Sem3D()
+    semantizer =  PcTls.Semantic3D()
     semantizer.set_voxel_size(voxel_size)
 
     mesh_filename = os.path.join(output_dir, filename+".ply")

@@ -5,7 +5,8 @@ from Cython.Distutils import build_ext
 
 pcl_include_dir = "/usr/local/include/pcl-1.8"
 pcl_lib_dir = "/usr/local/lib"
-vtk_include_dir = "/usr/include/vtk-6.2"
+#vtk_include_dir = "/usr/include/vtk-6.2"
+vtk_include_dir = "/usr/include/vtk-5.8"
 
 ext_modules = [Extension(
        "PcTools",

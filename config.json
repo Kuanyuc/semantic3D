@@ -1,11 +1,11 @@
 {
-    "train_input_dir":"path_to_directory_TRAIN",
-    "test_input_dir":"path_to_directory_TEST",
-    "train_results_root_dir":"where_to_put_training_products",
-    "test_results_root_dir":"where_to_put_test_products",
+    "train_input_dir":"/home/stevenchen/semantic3D/dataset/train",
+    "test_input_dir":"/home/stevenchen/semantic3D/dataset/test",
+    "train_results_root_dir":"/home/stevenchen/semantic3D/dataset/result/snapnet_result/training",
+    "test_results_root_dir":"/home/stevenchen/semantic3D/dataset/result/snapnet_result/test",
     "images_dir":"images",
 
-    "training": true,
+    "training": false,
 
     "imsize":224,
     "voxel_size":0.1,
@@ -20,7 +20,7 @@
     "test_create_views" : true,
     "test_create_images" : true,
 
-    "vgg_weight_init":"path_to_vgg_weights",
+    "vgg_weight_init":"/home/stevenchen/semantic3D/snapnet/model",
     "batch_size" : 24,
     "learning_rate" : 1e-4,
     "epoch_nbr" : 100,
@@ -31,8 +31,8 @@
     "train_composite" : true,
     "train_fusion" : true,
 
-    "saver_directory_rgb" : "path_to_rgb_model_directory",
-    "saver_directory_composite" : "path_to_composite_model_directory",
-    "saver_directory_fusion" : "path_to_fusion_model_directory",
-    "output_directory":"path_to_output_product_directory"
+    "saver_directory_rgb" : "/home/stevenchen/semantic3D/snapnet/model/snapnet_model_rgb/snapnet_model_rgb",
+    "saver_directory_composite" : "/home/stevenchen/semantic3D/snapnet/model/snapnet_model_composite/snapnet_model_composite",
+    "saver_directory_fusion" : "/home/stevenchen/semantic3D/snapnet/model/snapnet_model_fusion/snapnet_model_fusion",
+    "output_directory":"/home/stevenchen/semantic3D/snapnet/model/output"
 }

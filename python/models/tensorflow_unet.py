@@ -8,7 +8,7 @@ from .VGG_ILSVRC_16_layers import VGG_ILSVRC_16_layers as VGG16_net
 ###########################################
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import gen_nn_ops
-@ops.RegisterGradient("MaxPoolWithArgmax")
+#@ops.RegisterGradient("MaxPoolWithArgmax")
 def _MaxPoolGradWithArgmax(op, grad, unused_argmax_grad):
     return gen_nn_ops._max_pool_grad_with_argmax(op.inputs[0],
                           grad,

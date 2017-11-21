@@ -3,7 +3,7 @@ import os
 import scipy.misc
 from tqdm import *
 
-
+os.environ['QT_QPA_PLATFORM']='offscreen'
 
 # load the configuration file and define variables
 print("Loading configuration file")
