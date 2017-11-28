@@ -12,12 +12,12 @@
 
     "train_cam_number":10,
     "train_create_mesh" : true,
-    "train_create_views" : true,
+    "train_create_views" : false,
     "train_create_images" : true,
 
     "test_cam_number":10,
     "test_create_mesh" : true,
-    "test_create_views" : true,
+    "test_create_views" : false,
     "test_create_images" : true,
 
     "vgg_weight_init":"/home/stevenchen/semantic3D/snapnet/model",
