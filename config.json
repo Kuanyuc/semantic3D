@@ -21,7 +21,7 @@
     "test_create_images" : true,
 
     "vgg_weight_init":"/home/pgogia/Documents/steven/semantic3D/model/VGG_ILSVRC_16_layers.npy",
-    "batch_size" : 12,
+    "batch_size" : 6,
     "learning_rate" : 1e-4,
     "epoch_nbr" : 300,
     "label_nbr" : 10,
