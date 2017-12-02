@@ -170,7 +170,7 @@ if create_views:
         view_gen.opts["imsize"]= imsize
         view_gen.generate_cameras_scales(cam_number, distances=[5,10,20])
         view_gen.init()
-        #launcher.launch(view_gen)
+        launcher.launch(view_gen)
 
 
 if create_images:

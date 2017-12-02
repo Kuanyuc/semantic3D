@@ -1,0 +1,19 @@
+0: black : no pixel 
+1: grey : man-made terrain
+2: bright green : natural terrain
+3: dark green: high vegetation
+4: yellow : low vegetation
+5: red  : building	
+6: purple : hard scape 
+7: cyan : scanning artifacts
+8: pink : cars
+
+cols.push_back(Eigen::Vector3i(0,0,0));
+cols.push_back(Eigen::Vector3i(192,192,192));
+cols.push_back(Eigen::Vector3i(0,255,0));
+cols.push_back(Eigen::Vector3i(38,214,64));
+cols.push_back(Eigen::Vector3i(247,247,0));
+cols.push_back(Eigen::Vector3i(255,3,0));
+cols.push_back(Eigen::Vector3i(122,0,255));
+cols.push_back(Eigen::Vector3i(0,255,255));
+cols.push_back(Eigen::Vector3i(255,110,206));
