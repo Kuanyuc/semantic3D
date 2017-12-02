@@ -1,16 +1,16 @@
 {
     "train_input_dir":"/media/data2/semantic3D/train",
     "test_input_dir":"/media/data2/semantic3D/test",
-    "train_results_root_dir":"/media/data2/semantic3D/snapnet_result/train_bb",
-    "test_results_root_dir":"/media/data2/semantic3D/snapnet_result/NEA_result",
+    "train_results_root_dir":"/media/data2/semantic3D/snapnet_result/git/train",
+    "test_results_root_dir":"/media/data2/semantic3D/snapnet_result/git/test",
     "images_dir":"images",
 
-    "training": false,
+    "training": true,
 
     "imsize":224,
     "voxel_size":0.1,
 
-    "train_cam_number":50,
+    "train_cam_number": 200,
     "train_create_mesh" : false,
     "train_create_views" : true,
     "train_create_images" : true,
@@ -20,10 +20,10 @@
     "test_create_views" : true,
     "test_create_images" : true,
 
-    "vgg_weight_init":"/home/pgogia/Documents/steven/snapnet/model/VGG_ILSVRC_16_layers.npy",
+    "vgg_weight_init":"/home/pgogia/Documents/steven/semantic3D/model/VGG_ILSVRC_16_layers.npy",
     "batch_size" : 12,
     "learning_rate" : 1e-4,
-    "epoch_nbr" : 100,
+    "epoch_nbr" : 300,
     "label_nbr" : 10,
     "input_ch" : 3,
 
@@ -31,12 +31,12 @@
     "train_composite" : true,
     "train_fusion" : true,
 
-    "saver_directory_rgb" : "/home/pgogia/Documents/steven/snapnet/model/snapnet_model_rgb",
-    "saver_directory_composite" : "/home/pgogia/Documents/steven/snapnet/model/snapnet_model_composite",
-    "saver_directory_fusion" : "/home/pgogia/Documents/steven/snapnet/model/snapnet_model_fusion",
-    "output_directory":"/media/data2/semantic3D/snapnet_result/output",
+    "saver_directory_rgb" : "/home/pgogia/Documents/steven/semantic3D/model/snapnet_model_rgb",
+    "saver_directory_composite" : "/home/pgogia/Documents/steven/semantic3D/model/snapnet_model_composite",
+    "saver_directory_fusion" : "/home/pgogia/Documents/steven/semantic3D/model/snapnet_model_fusion",
+    "output_directory":"/media/data2/semantic3D/snapnet_result/git/output",
 
-    "train_saver_directory_rgb" : "/home/pgogia/Documents/steven/snapnet/model/train_snapnet_model_rgb",
-    "train_saver_directory_composite" : "/home/pgogia/Documents/steven/snapnet/model/train_snapnet_model_composite",
-    "train_saver_directory_fusion" : "/home/pgogia/Documents/steven/snapnet/model/train_snapnet_model_fusion"
+    "train_saver_directory_rgb" : "/home/pgogia/Documents/steven/semantic3D/model/train_snapnet_model_rgb",
+    "train_saver_directory_composite" : "/home/pgogia/Documents/steven/semantic3D/model/train_snapnet_model_composite",
+    "train_saver_directory_fusion" : "/home/pgogia/Documents/steven/semantic3D/model/train_snapnet_model_fusion"
 }

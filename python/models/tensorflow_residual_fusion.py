@@ -25,13 +25,13 @@ convolution3d = lambda *args, **kwargs: tf.contrib.layers.convolution3d(*args,
 def model(net1, net2, label_nbr):
 
 
-    net = [tf.concat([tf.stop_gradient(net1[-3]),tf.stop_gradient(net2[-3])],3)]
-    net.append(convolution2d(net[-1], 64))
-    net.append(convolution2d(net[-1], 64))
-    net.append(convolution2d(net[-1], label_nbr))
-    net.append(tf.stop_gradient(net1[-1])+tf.stop_gradient(net2[-1])+net[-1])
+    # net = [tf.concat([tf.stop_gradient(net1[-3]),tf.stop_gradient(net2[-3])],3)]
+    # net.append(convolution2d(net[-1], 64))
+    # net.append(convolution2d(net[-1], 64))
+    # net.append(convolution2d(net[-1], label_nbr))
+    # net.append(tf.stop_gradient(net1[-1])+tf.stop_gradient(net2[-1])+net[-1])
     
-    '''
+    
     net = [tf.stack([tf.stop_gradient(net1[-3]),tf.stop_gradient(net2[-3])], axis=0)]
     
     net.append(convolution3d(net[-1], 64))
@@ -46,6 +46,6 @@ def model(net1, net2, label_nbr):
     print("shape1", net[-1].get_shape())
     net.append(convolution2d(net[-1], label_nbr))
     net.append(-tf.stop_gradient(net1[-1])+tf.stop_gradient(net2[-1])+net[-1])
-    '''
+    
 
     return net, None

@@ -238,7 +238,7 @@ class BackProjeter:
                     #create a color image with the label colors 
                     pred_image = self.label_to_color_image(pred_image)
 
-                    
+                    '''
                     fig = plt.figure()
 
                     a=fig.add_subplot(1,4,1)
@@ -257,7 +257,7 @@ class BackProjeter:
                     imgplot = plt.imshow(res_image)
                     a.set_title('CRF Prediction')
                     plt.show()
-                    
+                    '''
                     # input("Press Enter to continue...")
 
                     indices = indices.reshape((-1))
