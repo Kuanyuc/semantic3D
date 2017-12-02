@@ -2,7 +2,10 @@
 __pycache__/
 Eigen/
 lib/
+model/
+kaffe/
 nanoflann.hpp
 *.so
 *.pyc
 *_local*
+
