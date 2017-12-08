@@ -45,7 +45,7 @@ def model(net1, net2, label_nbr):
     net = [tf.concat([net_conv3d_1,net_conv3d_2],3)]
     print("shape1", net[-1].get_shape())
     net.append(convolution2d(net[-1], label_nbr))
-    net.append(-tf.stop_gradient(net1[-1])+tf.stop_gradient(net2[-1])+net[-1])
+    net.append(tf.stop_gradient(net1[-1])+tf.stop_gradient(net2[-1])+net[-1])
     
 
     return net, None

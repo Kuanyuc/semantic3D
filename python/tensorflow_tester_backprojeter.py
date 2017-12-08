@@ -167,19 +167,20 @@ class BackProjeter:
 
                     #show predictions
                     print("Show predictions\n")
-                    print(preds_.shape)
+                    #print(preds_.shape)
 
                     #print as images 
                     pred_image = preds_.argmax(axis=2)
 
 
                     #do a crf post-processing step here 
-                    softmax = preds_.squeeze()
+                    softmax = preds_.squeeze()                    
 
                     softmax = np.rollaxis(softmax, 2)
+                    #print ("softmax", np.unique(softmax))
                     unary = softmax_to_unary(softmax)
                     unary = unary.reshape((10,-1)) # Needs to be flat.
-
+                    #print("unary shape {}".format(unary.shape))
                     # print(" softmax to unary")
 
                     # The inputs should be C-continious -- we are using Cython wrapper
@@ -188,6 +189,8 @@ class BackProjeter:
                     image = preds_
 
                     d = dcrf.DenseCRF(preds_.shape[0] * preds_.shape[1], 10)
+                    #print ("nvar", preds_.shape[0])
+                    #print ("nlabel", preds_.shape[1])
                     # print(" DenseCRF ")
                     d.setUnaryEnergy(unary)
                     # print(" Set unary energy ")
@@ -209,18 +212,14 @@ class BackProjeter:
                                          kernel=dcrf.DIAG_KERNEL,
                                          normalization=dcrf.NORMALIZE_SYMMETRIC)
 
-
-                    feats = create_pairwise_bilateral(sdims=(5, 5), schan=(20, 20, 20),
-                                                       img=np.uint8(batch_2[im_id]*255), chdim=2)
-
-                    d.addPairwiseEnergy(feats, compat=20,
-                                         kernel=dcrf.DIAG_KERNEL,
-                                         normalization=dcrf.NORMALIZE_SYMMETRIC)
-
                     Q = d.inference(5)
 
-                    print(np.array(Q).shape)
+                    #print(np.array(Q).shape)
                     res = np.argmax(Q, axis=0).reshape((image.shape[0], image.shape[1]))
+                    #print ("d", np.unique(d))
+                    #print ("Q", np.unique(Q))
+                    #print ("res", np.unique(res))
+
                     Q = np.array(Q)
                     Q_preds = np.rollaxis(Q, 1).reshape((image.shape[0], image.shape[1], 10))
 

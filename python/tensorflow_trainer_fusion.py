@@ -134,7 +134,7 @@ class TrainerFusion:
                 f.write(str(total_loss/(len(batches)*batch_size))+" \n")
                 f.flush()
 
-                if((epoch+1)%10==0):
+                if((epoch+1)%5==0):
                     # save the model
                     saver.save(sess, os.path.join(saver_directory,"model.ckpt"))
 

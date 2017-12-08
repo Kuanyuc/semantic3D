@@ -83,6 +83,7 @@ class Trainer:
 
             # iterate
             for epoch in range(epoch_nbr):
+                print("training model", variable_scope)
                 print("epoch "+str(epoch))
 
                 total_loss = 0
@@ -110,7 +111,7 @@ class Trainer:
                 f.write(str(total_loss/(len(batches)*batch_size))+" \n")
                 f.flush()
 
-                if((epoch+1)%10==0):
+                if((epoch+1)%5==0):
                     # save the model
                     saver.save(sess, os.path.join(saver_directory,"model.ckpt"))
 
